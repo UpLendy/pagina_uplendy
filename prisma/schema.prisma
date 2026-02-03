@@ -1,0 +1,42 @@
+// Configuración del generador y la fuente de datos
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Modelo para capturar la información del empresario
+model Lead {
+  id              String           @id @default(uuid())
+  email           String           @unique
+  fullName        String
+  companyName     String
+  phoneNumber     String?
+  calculations    RoiCalculation[]
+  diagnostics     Diagnostic[]
+  createdAt       DateTime         @default(now())
+}
+
+// Modelo para guardar los cálculos de la herramienta de ahorro
+model RoiCalculation {
+  id               String   @id @default(uuid())
+  leadId           String
+  lead             Lead     @relation(fields: [leadId], references: [id])
+  employeeCount    Int
+  hoursLostPerWeek Int
+  monthlySalary    Float
+  annualSavings    Float
+  createdAt        DateTime @default(now())
+}
+
+// Modelo para el cuestionario de diagnóstico (Lead Magnet)
+model Diagnostic {
+  id            String   @id @default(uuid())
+  leadId        String
+  lead          Lead     @relation(fields: [leadId], references: [id])
+  responses     Json     // Almacena las respuestas en formato JSON para mayor flexibilidad
+  riskLevel     String   // "Crítico", "Alto", "Moderado"
+  createdAt     DateTime @default(now())
+}
