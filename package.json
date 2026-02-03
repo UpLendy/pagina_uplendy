@@ -1,6 +1,7 @@
 {
   "name": "pagina_uplendy",
   "version": "0.1.0",
+  "packageManager": "pnpm@9.15.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
