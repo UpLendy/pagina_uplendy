@@ -18,7 +18,8 @@ export function LogosSection() {
                     viewport={{ once: true }}
                     className="text-center text-sm text-slate-500 mb-8"
                 >
-                    Empresas que confían en Uplendy
+                    <span className="block text-2xl font-bold text-slate-100 mb-2">Empresas que han transformado su operación con Uplendy</span>
+                    <span className="block text-emerald-400 font-medium">✨ Haz clic en los logos para ver nuestros casos de éxito</span>
                 </motion.p>
 
                 <motion.div
@@ -38,12 +39,12 @@ export function LogosSection() {
                         >
                             <Link
                                 href={logo.href}
-                                className="flex items-center gap-2 text-slate-500 hover:text-slate-400 transition-colors"
+                                className="group flex flex-col items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors"
                             >
-                                <div className="w-10 h-10 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center justify-center">
-                                    <span className="text-sm font-semibold text-slate-400">{logo.letters}</span>
+                                <div className="w-20 h-20 rounded-2xl bg-slate-900 border border-slate-800 group-hover:border-emerald-500/50 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] flex items-center justify-center transition-all duration-300 group-hover:-translate-y-1">
+                                    <span className="text-xl font-bold bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent group-hover:from-emerald-400 group-hover:to-emerald-600">{logo.letters}</span>
                                 </div>
-                                <span className="text-sm font-medium hidden sm:inline">{logo.name}</span>
+                                <span className="text-base font-semibold transition-colors">{logo.name}</span>
                             </Link>
                         </motion.div>
                     ))}
