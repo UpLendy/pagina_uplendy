@@ -178,7 +178,7 @@ export function BPMConsultingShowcase() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             { title: "Dashboard Inteligente", desc: "Vista centralizada de KPIs en tiempo real para la toma de decisiones directivas." },
-                            { title: "Automatización RPA", desc: "Bots que ejecutan tareas repetitivas 24/7 sin descanso ni errores." },
+                            { title: "Agendacion de citas automaticas", desc: "Agendacion de citas automaticas para los clientes de BPM Consulting." },
                             { title: "Integración Cloud", desc: "Infraestructura escalable y segura en la nube accesible desde cualquier lugar." }
                         ].map((feature, i) => (
                             <motion.div

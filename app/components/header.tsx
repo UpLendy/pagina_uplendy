@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { label: "Soluciones", href: "#solutions" },
   { label: "Calculadora ROI", href: "#calculator" },
+  { label: "Casos de éxito", href: "/companies" },
 ]
 
 export function Header() {
